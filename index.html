@@ -106,7 +106,8 @@ ul{list-style:none}
 /* ========== MEMBER GRID ========== */
 .member-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px;width:100%}
 .member-card{text-align:center;padding:28px 18px 22px}
-.member-avatar{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,var(--purple-light),var(--purple));margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:2rem;color:#fff;font-weight:700}
+.member-avatar{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,var(--purple-light),var(--purple));margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:2rem;color:#fff;font-weight:700;overflow:hidden}
+.member-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
 .member-card h3{font-size:1rem;font-weight:600;margin-bottom:3px;color:var(--gray-800)}
 .member-card .role{font-size:.78rem;color:var(--gray-600);margin-bottom:8px}
 .member-card .bio{font-size:.82rem;color:var(--gray-600);line-height:1.6}
@@ -124,7 +125,8 @@ ul{list-style:none}
 .member-modal-nav.next{right:12px}
 .member-modal-body{display:flex;flex:1;overflow-y:auto}
 .member-modal-left{flex:0 0 45%;background:linear-gradient(135deg,#f3e8ff,#ede9fe);display:flex;align-items:center;justify-content:center;padding:32px;min-height:300px}
-.member-modal-standing{width:100%;max-width:200px;aspect-ratio:3/4;background:linear-gradient(135deg,var(--purple-light),var(--purple));border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:4rem;color:#fff}
+.member-modal-standing{width:100%;max-width:200px;aspect-ratio:3/4;background:linear-gradient(135deg,var(--purple-light),var(--purple));border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:4rem;color:#fff;overflow:hidden}
+.member-modal-standing img{width:100%;height:100%;object-fit:cover;border-radius:var(--radius)}
 .member-modal-right{flex:1;padding:36px 32px;display:flex;flex-direction:column;justify-content:center}
 .member-modal-logo{width:clamp(100px,18vw,160px);height:auto;margin-bottom:12px}
 .member-modal-name{font-size:1.4rem;font-weight:700;color:var(--gray-800);margin-bottom:2px}
@@ -387,7 +389,6 @@ ul{list-style:none}
       <button class="member-modal-nav next" id="memberModalNext">›</button>
       <div class="member-modal-body" id="memberModalBody">
         <div class="member-modal-left" id="memberModalLeft">
-          <div class="member-modal-standing"></div>
         </div>
         <div class="member-modal-right" id="memberModalRight">
           <img class="member-modal-logo" src="https://i.imgur.com/AxMj2H3.png" alt="ミリプロ">
@@ -802,16 +803,16 @@ class GoodsSlider {
 
 // ==================== MEMBER DATA ====================
 const memberData=[
-  {name:"甘狼 このみ",role:"Producer",bio:"ミリプロ立ち上げ人。優しい狼のごとく、メンバーを優しく見守るプロデューサー。",color:["#6d28d9","#a78bfa"],sns:[{label:"X",url:"#",icon:"𝕏"},{label:"YouTube",url:"#",icon:"▶"},{label:"Twitter",url:"#",icon:"♡"}]},
-  {name:"メンバー A",role:"Member",bio:"プロフィール準備中。お楽しみに！",color:["#1e3a5f","#3b82f6"],sns:[{label:"X",url:"#",icon:"𝕏"},{label:"YouTube",url:"#",icon:"▶"}]},
-  {name:"メンバー B",role:"Member",bio:"プロフィール準備中。お楽しみに！",color:["#4c1d95","#7c3aed"],sns:[{label:"X",url:"#",icon:"𝕏"},{label:"YouTube",url:"#",icon:"▶"}]},
-  {name:"メンバー C",role:"Member",bio:"プロフィール準備中。お楽しみに！",color:["#0f172a","#475569"],sns:[{label:"X",url:"#",icon:"𝕏"}]},
-  {name:"メンバー D",role:"Member",bio:"プロフィール準備中。お楽しみに！",color:["#1a0a2e","#6d28d9"],sns:[{label:"X",url:"#",icon:"𝕏"},{label:"YouTube",url:"#",icon:"▶"}]},
-  {name:"メンバー E",role:"Member",bio:"プロフィール準備中。お楽しみに！",color:["#2e1065","#8b5cf6"],sns:[{label:"X",url:"#",icon:"𝕏"}]},
-  {name:"メンバー F",role:"Member",bio:"プロフィール準備中。お楽しみに！",color:["#0c0a3e","#5b21b6"],sns:[{label:"X",url:"#",icon:"𝕏"},{label:"YouTube",url:"#",icon:"▶"}]},
-  {name:"メンバー G",role:"Member",bio:"プロフィール準備中。お楽しみに！",color:["#1e1b4b","#4c1d95"],sns:[{label:"X",url:"#",icon:"𝕏"}]},
-  {name:"メンバー H",role:"Member",bio:"プロフィール準備中。お楽しみに！",color:["#172554","#1d4ed8"],sns:[{label:"X",url:"#",icon:"𝕏"},{label:"YouTube",url:"#",icon:"▶"}]},
-  {name:"メンバー I",role:"Member",bio:"プロフィール準備中。お楽しみに！",color:["#3b0764","#9333ea"],sns:[{label:"X",url:"#",icon:"𝕏"}]},
+  {icon:"",standing:"",name:"甘狼 このみ",role:"Producer",bio:"ミリプロ立ち上げ人。優しい狼のごとく、メンバーを優しく見守るプロデューサー。",color:["#6d28d9","#a78bfa"],sns:[{label:"X",url:"#",icon:"𝕏"},{label:"YouTube",url:"#",icon:"▶"},{label:"Twitter",url:"#",icon:"♡"}]},
+  {icon:"",standing:"",name:"メンバー A",role:"Member",bio:"プロフィール準備中。お楽しみに！",color:["#1e3a5f","#3b82f6"],sns:[{label:"X",url:"#",icon:"𝕏"},{label:"YouTube",url:"#",icon:"▶"}]},
+  {icon:"",standing:"",name:"メンバー B",role:"Member",bio:"プロフィール準備中。お楽しみに！",color:["#4c1d95","#7c3aed"],sns:[{label:"X",url:"#",icon:"𝕏"},{label:"YouTube",url:"#",icon:"▶"}]},
+  {icon:"",standing:"",name:"メンバー C",role:"Member",bio:"プロフィール準備中。お楽しみに！",color:["#0f172a","#475569"],sns:[{label:"X",url:"#",icon:"𝕏"}]},
+  {icon:"",standing:"",name:"メンバー D",role:"Member",bio:"プロフィール準備中。お楽しみに！",color:["#1a0a2e","#6d28d9"],sns:[{label:"X",url:"#",icon:"𝕏"},{label:"YouTube",url:"#",icon:"▶"}]},
+  {icon:"",standing:"",name:"メンバー E",role:"Member",bio:"プロフィール準備中。お楽しみに！",color:["#2e1065","#8b5cf6"],sns:[{label:"X",url:"#",icon:"𝕏"}]},
+  {icon:"",standing:"",name:"メンバー F",role:"Member",bio:"プロフィール準備中。お楽しみに！",color:["#0c0a3e","#5b21b6"],sns:[{label:"X",url:"#",icon:"𝕏"},{label:"YouTube",url:"#",icon:"▶"}]},
+  {icon:"",standing:"",name:"メンバー G",role:"Member",bio:"プロフィール準備中。お楽しみに！",color:["#1e1b4b","#4c1d95"],sns:[{label:"X",url:"#",icon:"𝕏"}]},
+  {icon:"",standing:"",name:"メンバー H",role:"Member",bio:"プロフィール準備中。お楽しみに！",color:["#172554","#1d4ed8"],sns:[{label:"X",url:"#",icon:"𝕏"},{label:"YouTube",url:"#",icon:"▶"}]},
+  {icon:"",standing:"",name:"メンバー I",role:"Member",bio:"プロフィール準備中。お楽しみに！",color:["#3b0764","#9333ea"],sns:[{label:"X",url:"#",icon:"𝕏"}]},
 ];
 
 const grid=qs('#memberGrid');
@@ -819,7 +820,8 @@ memberData.forEach((m,i)=>{
   const card=document.createElement('div');
   card.className='glass-card member-card fade-up';
   card.style.transitionDelay=(0.15+(i*0.07))+'s';
-  card.innerHTML=`<div class="member-avatar" style="background:linear-gradient(135deg,${m.color[0]},${m.color[1]})">${m.name.charAt(0)}</div><h3>${m.name}</h3><p class="role">${m.role}</p><p class="bio">${m.bio}</p>`;
+  const avatar=m.icon?`<img src="${m.icon}" alt="${m.name}">`:`${m.name.charAt(0)}`;
+  card.innerHTML=`<div class="member-avatar" style="background:linear-gradient(135deg,${m.color[0]},${m.color[1]})">${avatar}</div><h3>${m.name}</h3><p class="role">${m.role}</p><p class="bio">${m.bio}</p>`;
   card.addEventListener('click',()=>openMemberModal(i));
   grid.appendChild(card);
   setTimeout(()=>card.classList.add('visible'),100);
@@ -851,6 +853,8 @@ function closeMemberModal(){
 }
 function renderMemberModal(){
   const m=memberData[modalIndex];
+  const standing=m.standing?`<img src="${m.standing}" alt="${m.name}">`:`<div style="font-size:4rem;color:#fff;font-weight:700">${m.name.charAt(0)}</div>`;
+  modalLeft.innerHTML='<div class="member-modal-standing">'+standing+'</div>';
   modalLeft.style.background=`linear-gradient(135deg,${m.color[0]},${m.color[1]})`;
   modalName.textContent=m.name;
   modalRole.textContent=m.role;
