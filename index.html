@@ -65,7 +65,8 @@ ul{list-style:none}
 .hero-slide{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:opacity 0.9s cubic-bezier(0.25,0.1,0.25,1);pointer-events:none;display:flex;align-items:flex-end;padding:48px 40px;background-size:cover;background-position:center}
 .hero-slide.active{opacity:1;pointer-events:auto}
 .hero-slide::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(0deg,rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.15) 45%,rgba(0,0,0,0.05) 100%);z-index:1}
-.hero-slide-content{position:relative;z-index:2;max-width:640px;color:#fff}
+.hero-slide-link{display:flex;align-items:flex-end;width:100%;height:100%;padding:48px 40px;text-decoration:none;color:inherit;position:relative;z-index:2}
+.hero-slide-content{max-width:640px;color:#fff}
 .hero-slide-content .tag{display:inline-block;padding:3px 12px;border-radius:20px;background:var(--purple);font-size:.7rem;font-weight:600;letter-spacing:.04em;margin-bottom:10px;font-family:Barlow,"BIZ UDPGothic",sans-serif}
 .hero-slide-content h2{font-size:clamp(1.3rem,3.2vw,2rem);font-weight:700;line-height:1.25;margin-bottom:6px;letter-spacing:-.02em}
 .hero-slide-content p{font-size:clamp(.85rem,1.4vw,1rem);line-height:1.6;opacity:.85;max-width:500px}
@@ -172,7 +173,7 @@ ul{list-style:none}
 /* ========== RESPONSIVE ========== */
 @media(max-width:1024px){
   .header-nav a{font-size:.72rem;padding:4px 7px}
-  .hero-slide{padding:32px 28px}
+  .hero-slide-link{padding:32px 28px}
   .hero-slider-wrap{height:45vh;min-height:280px;max-height:400px}
 }
 @media(max-width:768px){
@@ -181,7 +182,7 @@ ul{list-style:none}
   .header-nav{display:none}
   .hamburger{display:flex}
   .hero-slider-wrap{height:40vh;min-height:240px;max-height:340px}
-  .hero-slide{padding:24px 18px}
+  .hero-slide-link{padding:24px 18px}
   .hero-slider-btn{width:34px;height:34px;font-size:1rem;opacity:1}
   .hero-slider-btn.prev{left:8px}
   .hero-slider-btn.next{right:8px}
@@ -197,7 +198,7 @@ ul{list-style:none}
 @media(max-width:480px){
   :root{--header-h:50px}
   .hero-slider-wrap{height:35vh;min-height:200px;max-height:280px}
-  .hero-slide{padding:18px 14px}
+  .hero-slide-link{padding:18px 14px}
   .hero-slide-content h2{font-size:1.1rem}
   .hero-slide-content p{font-size:.8rem}
   .member-grid{grid-template-columns:1fr 1fr;gap:10px}
@@ -247,34 +248,41 @@ ul{list-style:none}
   <section class="section" id="top">
     <div class="hero-slider-wrap" id="heroSlider">
       <div class="hero-slider-track" id="heroSliderTrack">
-        <div class="hero-slide active"<img src="https://i.imgur.com/xyT25by.jpeg" alt="夕霧レイ" style="background-image:linear-gradient(135deg,#1e1b4b,#4c1d95,#7c3aed)">
-          <div class="hero-slide-content">
-            <span class="tag">NEWS</span>
-            <h2>夕霧レイ　作戦開始！</h2>
-            <p>ミリプロ新メンバーである夕霧レイ、ついに始動。</p>
-          </div>
-        </div>
+        <div class="hero-slide active" style="background-image:linear-gradient(135deg,#1e1b4b,#4c1d95,#7c3aed)">
+          <a class="hero-slide-link" href="https://milpr.com/news/milpro_400" target="_blank" rel="noopener">
+            <div class="hero-slide-content">
+              <span class="tag">NEWS</span>
+              <h2>400万人達成！！</h2>
+              <p>ミリプロ全体のYouTubeチャンネル登録者数が「400万人」を突破しました！</p>
+            </div>
+          </a>
         </div>
         <div class="hero-slide" style="background-image:linear-gradient(135deg,#0f172a,#1e3a5f,#2d5a8e)">
-          <div class="hero-slide-content">
-            <span class="tag">RECRUIT</span>
-            <h2>メンバー大募集</h2>
-            <p>ミリプロでは一緒に活動するメンバーを募集中とのことです。</p>
-          </div>
+          <a class="hero-slide-link" href="https://campaign.karaoke-shin.jp/2607-2/milpr?utm_source=milpr_x&utm_medium=social&utm_campaign=milpr_collaboration" target="_blank" rel="noopener">
+            <div class="hero-slide-content">
+              <span class="tag">NEWS</span>
+              <h2>「Million Production」×「カラオケBanBanグループ」</h2>
+              <p>「Million Production」と「カラオケBanBanグループ」のコラボが開催されます！</p>
+            </div>
+          </a>
         </div>
         <div class="hero-slide" style="background-image:linear-gradient(135deg,#1a0a2e,#3b0764,#6d28d9)">
-          <div class="hero-slide-content">
-            <span class="tag">LIVE</span>
-            <h2>初ライブ決定</h2>
-            <p>記念すべきファーストライブの開催が決定。詳細は後日発表。</p>
-          </div>
+          <a class="hero-slide-link" href="https://milpr.com/news/ray_debut" target="_blank" rel="noopener">
+            <div class="hero-slide-content">
+              <span class="tag">NEWS</span>
+              <h2>夕霧レイ　作戦開始！</h2>
+              <p>ミリプロの新メンバー「夕霧レイ」が始動しました！</p>
+            </div>
+          </a>
         </div>
         <div class="hero-slide" style="background-image:linear-gradient(135deg,#0f172a,#2e1065,#5b21b6)">
-          <div class="hero-slide-content">
-            <span class="tag">MUSIC</span>
-            <h2>オリジナル楽曲配信中</h2>
-            <p>各サブスクリプションサービスにて配信中。</p>
-          </div>
+          <a class="hero-slide-link" href="https://nex-tone.link/A00215727" target="_blank" rel="noopener">
+            <div class="hero-slide-content">
+              <span class="tag">MUSIC</span>
+              <h2>オリジナル楽曲配信中</h2>
+              <p>各サブスクリプションサービスにて配信中。</p>
+            </div>
+          </a>
         </div>
       </div>
       <button class="hero-slider-btn prev" id="heroSliderPrev">‹</button>
